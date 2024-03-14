@@ -28,6 +28,7 @@ export const DashboardCarousel = ({
 				infiniteLoop={true}
 				showIndicators={false}
 				showStatus={false}
+				showThumbs={false}
 			>
 				{items.map((item) => (
 					<CarouselItem

@@ -1,19 +1,8 @@
 import { ProductListItem } from "@/components/molecules/ProductListItem/ProductListItem";
-
-export interface ProductItem {
-	id: string;
-	category: string;
-	name: string;
-	price: number;
-	img: {
-		alt: string;
-		src: string;
-	};
-	description: string;
-}
+import { type ProductItemBaseFragment } from "@/gql/graphql";
 
 interface ProductsListProps {
-	products: ProductItem[];
+	products: ProductItemBaseFragment[];
 }
 
 export const ProductsList = ({ products }: ProductsListProps) => {

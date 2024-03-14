@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { Navigation } from "@/components/organisms/Navigation/Navigation";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
 	title: "Products App",
@@ -19,7 +19,7 @@ export default function RootLayout({
 	return (
 		<html lang="pl">
 			<body className={inter.className}>
-				<div className="grid-rows-layout relative grid min-h-screen bg-slate-100">
+				<div className="relative grid min-h-screen grid-rows-layout bg-slate-100">
 					<Navigation />
 					<section className="mx-auto p-4 sm:p-8 xl:p-16">
 						{children}

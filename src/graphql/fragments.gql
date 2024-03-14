@@ -1,0 +1,22 @@
+fragment ProductItemBase on Product {
+	id
+	name
+	description
+	categories {
+		name
+		id
+	}
+	images {
+		url
+	}
+	price
+	collections {
+		id
+		name
+	}
+	reviews {
+		id
+		title
+	}
+	slug
+}

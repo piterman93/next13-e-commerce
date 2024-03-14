@@ -9,10 +9,10 @@ export default async function Home() {
 	const products = await getProductsList();
 
 	const items: CarouselItemType[] = products.map(
-		({ id, name, img }) => ({
+		({ id, name, images }) => ({
 			id,
 			name,
-			img,
+			img: { src: images[0]?.url ?? "", alt: "" },
 		}),
 	);
 

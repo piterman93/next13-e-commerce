@@ -15,7 +15,13 @@ export const ActiveLink = ({
 	children: ReactNode;
 }) => {
 	const pathname = usePathname();
-	const isActive = pathname === href;
+	const pathnameArray = pathname.split("/");
+	const parsedPathname =
+		pathnameArray.length > 2
+			? `/${pathnameArray.slice(1, -1).join("/")}`
+			: pathname;
+
+	const isActive = parsedPathname === href;
 
 	return (
 		<li

@@ -1,0 +1,10 @@
+query ProductsGetByCategorySlug {
+	categories {
+		data {
+			slug
+			products {
+				...ProductItemBase
+			}
+		}
+	}
+}

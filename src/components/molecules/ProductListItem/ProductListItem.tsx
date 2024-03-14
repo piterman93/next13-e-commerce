@@ -1,22 +1,20 @@
 import Link from "next/link";
-import { type ProductItem } from "@/components/organisms/ProductsList/ProductsList";
+
 import { formatPrice } from "@/utils/helpers";
+import { type ProductItemBaseFragment } from "@/gql/graphql";
 
 interface ProductListItemProps {
-	product: ProductItem;
+	product: ProductItemBaseFragment;
 	className?: string;
 }
 
 export const ProductListItem = ({
-	product: {
-		img: { alt, src },
-		category,
-		name,
-		price,
-		id,
-	},
+	product: { images, categories, name, price, id },
 	className,
 }: ProductListItemProps) => {
+	const img = images[0]?.url ?? "";
+	const category = categories[0]?.name;
+
 	return (
 		<li className="list-none">
 			<Link href={`/product/${id}`}>
@@ -25,8 +23,8 @@ export const ProductListItem = ({
 				>
 					<img
 						className="h-full w-full rounded-2xl object-cover object-center transition-transform hover:scale-105"
-						src={src}
-						alt={alt}
+						src={img}
+						alt={""}
 					/>
 				</div>
 				<div>
